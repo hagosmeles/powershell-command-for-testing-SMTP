@@ -1,0 +1,13 @@
+Install-module exchangeonlinemanagement
+Import-module exchangeonlinemanagement
+Connect-Exchangeonline
+$splatr = @{
+To = 'recip@domain.com'
+From = 'you@outlook.com'
+Subject ='test'
+Body ='test'
+SmtpServer ='smtp.office365.com'
+Port = 587
+UseSSL = $true
+}
+Send-MailMessage @splatr -Credential you@outlook.com
